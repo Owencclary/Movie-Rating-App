@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}All Movies{% endblock %}
+
+{% block body %}
+  <h2>Navigation</h2>
+    <ul>
+        <li><a href="/movies">View all movies</a></li>
+        <li><a href="/users">View all users</a></li>
+    </ul>
+  <h1>All Movies</h1>
+
+  <ul>
+    {% for movie in movies %}
+      <li>
+        <a href="/movie/{{ movie.movie_id }}">
+          {{ movie.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
